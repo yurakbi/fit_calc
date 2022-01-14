@@ -46,15 +46,15 @@ h1 {
   margin: 10px auto;
 }
 
-#start {
+.start {
   width: 100px;
 }
 
-#finish {
+.finish {
   width: 100px;
 }
 
-#distance {
+.distance {
   width: 100px;
 }
 

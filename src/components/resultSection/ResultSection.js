@@ -1,16 +1,16 @@
 
 import '../style/index.css';
 
-const ResultSection = () => {
-
+const ResultSection = (props) => {
+    const {distance} = props;
     return (
-        <section className="result">
+            <li className="result">
             <div className="day_result">
-                <div class="month_day">December 11</div>
-                <div className="type_activity">Run</div>
-                <div className="distance">1 km</div>
-                <div className="time"> 35 minutes</div>
-                <div className="speed"> 3.5 km/hour</div>
+                <div className="month_day">{}</div>
+                <div className="type_activity">{}</div>
+                <div className="distance">{distance}</div>
+                <div className="time"> {}</div>
+                <div className="speed"> {}</div>
             </div>
             <div className="longest">
                 <div className="longest_ride">
@@ -40,7 +40,7 @@ const ResultSection = () => {
                     <div className="total_run">12.4 km</div>
                 </div>
             </div>
-        </section>
+        </li>
     )
 }
 

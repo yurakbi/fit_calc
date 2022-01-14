@@ -1,49 +1,65 @@
-import { useState } from 'react';
-import {  useSelector } from 'react-redux';
-import { v4 as uuidv4 } from 'uuid';
+import {Component} from 'react';
+
 
 import '../style/index.css';
 
-const InputActivity = () => {
-
-    const [activity, setActivity] = useState();
-    const [distance, setDistance] = useState();
-    const [time, setTime] = useState();
-
-    const onSubmitHundler = (e) => {
-        e.preventDefault();
-
-        const newActivity = {
-            id: uuidv4(),
-            dist: distance,
-            time: time,
-            currentDateTime: Date().toLocaleString(),
-            activity: activity
+class  InputActivity extends Component {
+    constructor(props) {
+        super(props)
+        this.state={
+            starttime: '',
+            finishtime: '',
+            distance: '',
 
         }
-
-        setActivity('');
-        setDistance('');
-        setTime('');
     }
 
-    return (
-        <section className="input_activity">
+    onValueChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value,
+        })
+    }
+
+    onSubmit = (e) => {
+        e.preventDefault();
+        this.props.onAdd(this.state.starttime, this.finishtime, this.state.distance);
+        this.setState({
+            starttime: '',
+            finishtime: '',
+            distance: '',
+        })
+    }
+
+
+    render () {
+        const {starttime, finishtime, distance} = this.state
+        return (
+            <section className="input_activity">
             <div className="input">
                 <h3>Add new activity</h3>
-                <form onSubmit={onSubmitHundler}>
+                <form onSubmit={this.onSubmit}>
                     <input 
-                        id="start" 
-                        type="text" 
-                        placeholder="Start time"/>
+                        className='start'
+                        name='starttime'
+                        type="time" 
+                        value={starttime}
+                        onChange={this.onValueChange}
+                        />
                     <input 
-                        id="finish" 
-                        type="text" 
-                        placeholder="Finish time"/>
+                        className='finish'
+                        name='finishtime'
+                        type="time" 
+                        value={finishtime}
+                        onChange={this.onValueChange}
+                        />
                     <input 
-                        id="distance" 
+                        className='distance'
+                        name='distance'
                         type="text" 
-                        placeholder="Distance"/>
+                        placeholder="Distance"
+                        value={distance}
+                        onChange={this.onValueChange}
+                        />
                     <select className="select_activity">
                         <option selected>Select type of activity</option>
                         <option value="ride">Ride</option>
@@ -52,8 +68,9 @@ const InputActivity = () => {
                     <button className="save"> Save </button>
                 </form> 
             </div>  
-        </section>    
-    )
+        </section>   
+        )
+    }  
     
 }
 
