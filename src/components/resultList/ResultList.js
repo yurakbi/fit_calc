@@ -6,13 +6,13 @@ const ResultList = ({data}) => {
         const {id, ...itemProps} = item;
         return (
             <ResultSection
-               key={id}
+              key={id}
                {...itemProps} />
         )
     })
 
     return(
-        <ul className='result'>
+        <ul className='result-list'>
             {elements}
         </ul>
     )

@@ -22,17 +22,18 @@ class  InputActivity extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        this.props.onAdd(this.state.starttime, this.finishtime, this.state.distance);
+        this.props.onAdd(this.state.starttime, this.finishtime, this.state.distance, this.state.activity);
         this.setState({
             starttime: '',
             finishtime: '',
             distance: '',
+            activity: ''
         })
     }
 
 
     render () {
-        const {starttime, finishtime, distance} = this.state
+        const {starttime, finishtime, distance, activity} = this.state
         return (
             <section className="input_activity">
             <div className="input">
