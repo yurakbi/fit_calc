@@ -3,13 +3,14 @@ import {Component} from 'react';
 
 import '../style/index.css';
 
-class  InputActivity extends Component {
+class InputActivity extends Component {
     constructor(props) {
         super(props)
         this.state={
             starttime: '',
             finishtime: '',
             distance: '',
+            activity: ''
 
         }
     }
@@ -22,13 +23,14 @@ class  InputActivity extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        this.props.onAdd(this.state.starttime, this.finishtime, this.state.distance, this.state.activity);
-        this.setState({
-            starttime: '',
-            finishtime: '',
-            distance: '',
-            activity: ''
-        })
+        this.props.onAdd(this.state.starttime, this.state.finishtime, this.state.distance, this.state.activity);
+        this.setState(state => ({
+            starttime: state.starttime,
+            finishtime: state.finishtime,
+            distance: state.distance,
+            activity: state.activity,
+            id: ''
+        }))
     }
 
 
