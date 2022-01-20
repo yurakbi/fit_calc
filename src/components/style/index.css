@@ -25,6 +25,7 @@ code {
   height: 100px;
   background-color: dodgerblue;
   text-align: center;
+  box-shadow: 5px 3px  rgb(147, 149, 149);
 }
 
 h1 {
@@ -38,6 +39,7 @@ h1 {
   min-height: 30px;
   border: solid 1px ;
   border-radius: 5px;
+  box-shadow: 5px 3px  rgb(147, 149, 149);
 }
 
 .input{
@@ -81,7 +83,7 @@ h1 {
   border: solid 1px ;
   border-radius: 5px;
   text-align: center;
-  box-shadow: 5px 3px  rgb(147, 149, 149) 
+  box-shadow: 5px 3px  rgb(147, 149, 149);
 
 
 }
@@ -93,6 +95,7 @@ h1 {
   min-height: 30px;
   border: solid 1px ;
   border-radius: 5px;
+  box-shadow: 5px 3px  rgb(147, 149, 149);
 }
 
 .longest_ride {
@@ -130,6 +133,7 @@ h1 {
   border-radius: 5px;
   grid-column-start:  2;
   grid-column-end: 3;
+  box-shadow: 5px 3px  rgb(147, 149, 149);
 }
 
 .total_ride_distance {

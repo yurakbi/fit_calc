@@ -1,6 +1,5 @@
 import {Component} from 'react';
 
-
 import '../style/index.css';
 
 class InputActivity extends Component {
@@ -10,14 +9,14 @@ class InputActivity extends Component {
             starttime: '',
             finishtime: '',
             distance: '',
-            activity: ''
-
+            activity:''
         }
     }
 
     onValueChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value,
+            activity: e.target.value
         })
     }
 
@@ -28,8 +27,6 @@ class InputActivity extends Component {
             starttime: state.starttime,
             finishtime: state.finishtime,
             distance: state.distance,
-            activity: state.activity,
-            id: ''
         }))
     }
 
@@ -63,10 +60,10 @@ class InputActivity extends Component {
                         value={distance}
                         onChange={this.onValueChange}
                         />
-                    <select className="select_activity">
-                        <option selected>Select type of activity</option>
-                        <option value="ride">Ride</option>
-                        <option value="run">Run</option>
+                    <select  value = {activity} onChange={this.onValueChange} className="select_activity">
+                        <option >Select type of activity</option>
+                        <option value="Ride">Ride</option>
+                        <option value="Run">Run</option>
                     </select>
                     <button className="save"> Save </button>
                 </form> 

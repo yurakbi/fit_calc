@@ -12,9 +12,9 @@ class App extends Component {
     super(props)
     this.state = {
       data:[
-        {months: 'January 11', activity: 'run', distance: "5 km", time: '35 min', speed: '5 km/h', id: 1},
-        {months: 'January 12', activity: 'ride', distance: "10 km", time: '1 hour', speed: '10 km/h', id: 2},
-        {months: 'January 12', activity: 'ride', distance: "10 km", time: '1 hour', speed: '10 km/h', id: 3}
+        // {months: 'January 11', activity: 'run', distance: "5 km", time: '35 min', speed: '5 km/h', id: 1},
+        // {months: 'January 12', activity: 'ride', distance: "10 km", time: '1 hour', speed: '10 km/h', id: 2},
+        // {months: 'January 12', activity: 'ride', distance: "10 km", time: '1 hour', speed: '10 km/h', id: 3}
 
       ],
     }
@@ -22,18 +22,23 @@ class App extends Component {
   }
 
   addItem = (starttime, finishtime, distance, activity) => {
+
     const finish = finishtime.split(':');
     const start = starttime.split(':');
-    const time = Math.floor((finish[0], finish[1]) - (start[0],start[1]) ); 
-    console.log(time);
+    const time_hour = Math.floor(finish[0] - start[0]);
+    const time_min = Math.floor(finish[1] - start[1]);
+    const time = time_hour + 'h ' + time_min + ' min';
+    
 
-    const speed = Math.floor(distance / time);
+    const speed = Math.round(distance / time_hour) + ' km/h';
+    console.log(speed);
 
     const months_all = ["January ", "February ", "March ", "April ", "May ", "June ", "July ", "August ", "September ", "October ", "November ", "December "];
     const d = new Date();
     const months_name = months_all[d.getMonth()];
-    const date = d.getDay();
+    const date = d.getDate();
     const months = months_name + date;
+
       
     const newItem = {
       months: months,
