@@ -15,24 +15,25 @@ class InputActivity extends Component {
 
     onValueChange = (e) => {
         this.setState({
-            [e.target.name]: e.target.value,
-            activity: e.target.value
+            [e.target.name]: e.target.value,             
         })
+       
     }
 
     onSubmit = (e) => {
         e.preventDefault();
         this.props.onAdd(this.state.starttime, this.state.finishtime, this.state.distance, this.state.activity);
         this.setState(state => ({
-            starttime: state.starttime,
-            finishtime: state.finishtime,
-            distance: state.distance,
+            starttime: '',
+            finishtime: "",
+            distance: "",
+            activity: ''
         }))
     }
 
 
     render () {
-        const {starttime, finishtime, distance, activity} = this.state
+        const {starttime, finishtime, distance} = this.state
         return (
             <section className="input_activity">
             <div className="input">
@@ -60,7 +61,7 @@ class InputActivity extends Component {
                         value={distance}
                         onChange={this.onValueChange}
                         />
-                    <select  value = {activity} onChange={this.onValueChange} className="select_activity">
+                    <select  name = 'activity' onChange={this.onValueChange} className="select_activity">
                         <option >Select type of activity</option>
                         <option value="Ride">Ride</option>
                         <option value="Run">Run</option>

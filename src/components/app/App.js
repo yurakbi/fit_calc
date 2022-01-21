@@ -3,6 +3,7 @@ import { Component } from 'react';
 import MainName from '../mainName/MainName';
 import InputActivity from '../inputActivity/InputActivity';
 import ResultList from '../resultList/ResultList';
+import BestResult from '../bestResult/BestResult';
 
 import '../style/index.css';
 
@@ -18,17 +19,21 @@ class App extends Component {
 
       ],
     }
-    this.maxId = 4;
+    this.maxId = 1;
   }
 
   addItem = (starttime, finishtime, distance, activity) => {
-
+    
     const finish = finishtime.split(':');
     const start = starttime.split(':');
-    const time_hour = Math.floor(finish[0] - start[0]);
-    const time_min = Math.floor(finish[1] - start[1]);
+    const time_hour = Math.abs(Math.floor(finish[0] - start[0]));
+    const time_min = Math.abs(Math.floor(finish[1] - start[1]));
+    
     const time = time_hour + 'h ' + time_min + ' min';
     
+    if (distance.length <= 0) {
+      return distance
+    }
 
     const speed = Math.round(distance / time_hour) + ' km/h';
     console.log(speed);
@@ -38,7 +43,6 @@ class App extends Component {
     const months_name = months_all[d.getMonth()];
     const date = d.getDate();
     const months = months_name + date;
-
       
     const newItem = {
       months: months,
@@ -63,7 +67,9 @@ class App extends Component {
         <>
           <MainName/>
           <InputActivity onAdd={this.addItem}/>
+          <BestResult/>
           <ResultList data={this.state.data}/>
+          
         </>  
       </div>
     );

@@ -64,7 +64,7 @@ h1 {
   width: 170px;
 }
 
-.result {
+.result{
   display: grid;
   margin-top: 20px;
   grid-template-columns: 600px 200px;
@@ -73,6 +73,7 @@ h1 {
   row-gap: 10px;
   
 }
+
 
 .day_result {
   display: flex;
@@ -89,9 +90,8 @@ h1 {
 }
 
 .longest {
-  display: grid;
-  grid-template-columns: 200px ;
-  background-color: rgb(230, 133, 65);
+  margin-top: 20px;
+  background-color: rgb(231, 153, 98);
   min-height: 30px;
   border: solid 1px ;
   border-radius: 5px;
@@ -99,17 +99,25 @@ h1 {
 }
 
 .longest_ride {
-  display: grid;
-  margin: 10px auto;
+  display:block;
+  margin: 5 auto;
   grid-template-columns: 200px ;
   grid-template-rows: auto;
+  font-size: 20px;
+  font-weight: 500;
 }
-
+h3 {
+  padding-top: 5px;
+  text-align: center;
+  padding-bottom: 5px;
+}
 .longest_run {
-  display: grid;
-  margin: 10px auto;
+  display: block;
+  margin: 5px auto;
   grid-template-columns: 200px;
   grid-template-rows: auto;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .longest_ride_text {
