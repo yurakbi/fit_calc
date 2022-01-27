@@ -1,6 +1,6 @@
 import { Component } from 'react';
 
-import MainName from '../mainName/MainName';
+import MainName from '../mainName/mainName';
 import InputActivity from '../inputActivity/InputActivity';
 import ResultList from '../resultList/ResultList';
 import BestResult from '../bestResult/BestResult';
@@ -13,13 +13,13 @@ class App extends Component {
     super(props)
     this.state = {
       data:[
-        // {months: 'January 11', activity: 'run', distance: "5 km", time: '35 min', speed: '5 km/h', id: 1},
-        // {months: 'January 12', activity: 'ride', distance: "10 km", time: '1 hour', speed: '10 km/h', id: 2},
-        // {months: 'January 12', activity: 'ride', distance: "10 km", time: '1 hour', speed: '10 km/h', id: 3}
+        {months: 'January 11', activity: 'Run', distance: "5 km", time: '1 h', speed: '5 km/h', id: 1},
+        {months: 'January 12', activity: 'Ride', distance: "10 km", time: '1 h', speed: '10 km/h', id: 2},
+        {months: 'January 12', activity: 'Ride', distance: "15 km", time: '1 h 25 m', speed: '15 km/h', id: 3}
 
       ],
     }
-    this.maxId = 1;
+    this.maxId = 4;
   }
 
   addItem = (starttime, finishtime, distance, activity) => {
@@ -62,14 +62,15 @@ class App extends Component {
 
  render () {
    const {data} = this.state;
+  //  const ride_activity = this.state.data.filter(item => item.activity === 'Ride');
+  //  const ride = ride_activity.filter(item => item.distance = Math.max(item.distance));
     return (
       <div className="App">
         <>
           <MainName/>
           <InputActivity onAdd={this.addItem}/>
           <BestResult/>
-          <ResultList data={this.state.data}/>
-          
+          <ResultList data={data}/>
         </>  
       </div>
     );

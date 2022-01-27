@@ -11,7 +11,7 @@ const ResultList = ({data}) => {
         )
     })
 
-    return(
+    return( 
         <ul className='result-list'>
             {elements}
         </ul>

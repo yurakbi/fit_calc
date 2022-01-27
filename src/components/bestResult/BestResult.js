@@ -2,16 +2,17 @@
 
 import '../style/index.css'; 
 
-const BestResult = () => {
+const BestResult = ({}) => {
+    
     return(
-        <div className='result_all'>
+        <div className='result_best'>
             <div className="longest">
             <div className="longest_ride">
                 <h3>Longest ride</h3>
                 <div className="longest_ride_text">
-                    <div className="longest_ride_day">October 23</div>
-                    <div className="longest_ride_distance">25km</div>
-                    <div className="longest_ride_time">1h 40m</div>
+                    <div className="longest_ride_day">{}</div>
+                    <div className="longest_ride_distance">{}</div>
+                    <div className="longest_ride_time">{}</div>
                 </div>
             </div>
             <div className="longest_run">

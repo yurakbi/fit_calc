@@ -13,7 +13,6 @@ const ResultSection = (props) => {
                     <div className="speed"> {speed}</div>
                 </div>
             </li>
-        
     )
 }
 

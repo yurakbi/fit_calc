@@ -65,7 +65,7 @@ h1 {
 }
 
 .result{
-  display: grid;
+  display: block;
   margin-top: 20px;
   grid-template-columns: 600px 200px;
   grid-template-rows: minmax(50px auto);
@@ -74,11 +74,20 @@ h1 {
   
 }
 
+.result_best {
+  display: block;
+  margin: 0 auto;
+}
+
+ul {
+  padding-inline-start: 0;
+}
 
 .day_result {
   display: flex;
   justify-content: space-between;
-  margin: 0;
+
+ 
   background-color: rgb(104, 213, 233);
   height: 30px;
   border: solid 1px ;
@@ -156,5 +165,3 @@ h3 {
   display: flex;
   justify-content: space-between;
 }
-
-
