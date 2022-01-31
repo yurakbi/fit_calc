@@ -62,14 +62,12 @@ class App extends Component {
 
  render () {
    const {data} = this.state;
-  //  const ride_activity = this.state.data.filter(item => item.activity === 'Ride');
-  //  const ride = ride_activity.filter(item => item.distance = Math.max(item.distance));
     return (
       <div className="App">
         <>
           <MainName/>
           <InputActivity onAdd={this.addItem}/>
-          <BestResult/>
+          <BestResult data={data}/>
           <ResultList data={data}/>
         </>  
       </div>

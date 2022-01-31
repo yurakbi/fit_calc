@@ -99,13 +99,15 @@ ul {
 }
 
 .longest {
-  margin-top: 20px;
-  background-color: rgb(231, 153, 98);
+  grid-template-columns: 200px;
+  margin-top: 10px;
+  background-color: rgb(231, 219, 116);
   min-height: 30px;
   border: solid 1px ;
   border-radius: 5px;
+  grid-column-start:  2;
+  grid-column-end: 3;
   box-shadow: 5px 3px  rgb(147, 149, 149);
-  width: 250px;
 }
 
 .longest_ride {
@@ -147,6 +149,7 @@ h3 {
 
 .total {
   grid-template-columns: 200px;
+  margin-top: 10px;
   background-color: rgb(199, 54, 86);
   min-height: 30px;
   border: solid 1px ;

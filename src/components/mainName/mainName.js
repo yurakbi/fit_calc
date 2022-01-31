@@ -1,6 +1,6 @@
 import '../style/index.css';
 
-const MainName = () => {
+const mainName = () => {
     return (
         <section className="main">
             <h1>Activity tracker</h1>
@@ -8,4 +8,4 @@ const MainName = () => {
     )
 }
 
-export default MainName;
+export default mainName;
