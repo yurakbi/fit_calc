@@ -1,4 +1,4 @@
-import ResultSection from '../resultSection/ResultSection';
+import ResultSection from '../resultSection/resultSection';
 import '../style/index.css';
 
 const ResultList = ({data}) => {

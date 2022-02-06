@@ -1,9 +1,10 @@
 import { Component } from 'react';
 
 import MainName from '../mainName/mainName';
-import InputActivity from '../inputActivity/InputActivity';
-import ResultList from '../resultList/ResultList';
-import BestResult from '../bestResult/BestResult';
+import InputActivity from '../inputActivity/inputActivity';
+import ResultList from '../resultList/resultList';
+import BestResult from '../bestResult/bestResult';
+
 
 import '../style/index.css';
 
@@ -36,18 +37,17 @@ class App extends Component {
     }
 
     const speed = Math.round(distance / time_hour) + ' km/h';
-    console.log(speed);
 
     const months_all = ["January ", "February ", "March ", "April ", "May ", "June ", "July ", "August ", "September ", "October ", "November ", "December "];
     const d = new Date();
     const months_name = months_all[d.getMonth()];
     const date = d.getDate();
     const months = months_name + date;
-      
+
     const newItem = {
       months: months,
       activity: activity,
-      distance: distance +' km',
+      distance: distance + ' km',
       time:  time,
       speed: speed,
       id: this.maxId++
@@ -62,6 +62,7 @@ class App extends Component {
 
  render () {
    const {data} = this.state;
+   
     return (
       <div className="App">
         <>

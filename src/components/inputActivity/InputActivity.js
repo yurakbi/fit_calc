@@ -27,7 +27,7 @@ class InputActivity extends Component {
             starttime: '',
             finishtime: "",
             distance: "",
-            activity: ''
+            activity: ""
         }))
     }
 
