@@ -14,7 +14,7 @@ class App extends Component {
     super(props)
     this.state = {
       data:[
-        {months: 'January 11', activity: 'Run', distance: "5 km", time: '1 h', speed: '5 km/h', id: 1},
+        {months: 'January 11', activity: 'Run', distance: "10 km", time: '2 h', speed: '5 km/h', id: 1},
         {months: 'January 12', activity: 'Ride', distance: "10 km", time: '1 h', speed: '10 km/h', id: 2},
         {months: 'January 12', activity: 'Ride', distance: "15 km", time: '1 h 25 m', speed: '15 km/h', id: 3}
 
